@@ -1,0 +1,36 @@
+displaycomponent: -------------------- 
+<div id="lastVote">{{ answer }}</div>
+<voter-component
+[question]="question"
+[yesAnswer]="yesAnswer"
+[noAnswer]="noAnswer"
+(output)="setVote($event)"></voter-component>
+public answer: string = 'Yes';
+setVote(event: boolean) {
+return (this.answer = event ? this.yesAnswer : this.noAnswer);}
+
+angularrouter -----------
+ <div class="container">
+    <button (click)="goto(['login'])">Login</button>
+    <br />
+    <button (click)="goto([{outlets: {bottom: ['home']}}])">Home</button>
+    <br />
+    <button (click)="goto([{outlets: {bottom: null}}])">Clear Bottom Outlet </button>
+    <br />
+    <button (click)="goto([ 'catalog', {outlets: {bottom: null}}])">Catalog + clear outlet bottom Outlet </button>
+    <router-outlet></router-outlet>
+    <router-outlet name='bottom'></router-outlet>
+  </div>
+  goto(path: string[]) {
+    console.log(path);
+    this.router.navigate(path);
+  }
+-----------Fee --------------
+     <div id="fee">{{ fee | percent: '2.2-3'}}</div>
+<div id="time">
+{{ timeOfTransaction | date: 'ww:yyyy J dd hh-mm-ss' }}
+</div>
+<div id="amount">
+   {{ amount | currency: currency:'symbol':'9.2-2' }}
+</div>
+

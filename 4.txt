@@ -1,0 +1,12 @@
+laquelle n'est pas une méthode du cycle de vie Angular ? ngContentChange
+service HttpClient : HttpClientModule
+laquelle n'est pas un directive structurelle d'Angular : ngUnless
+propriété permet de définir des routes filles : children
+Qu'utiliseriez-vous pour ajouter le même entête HTTP à tous vos appels HTTP ? Un Interceptor
+Quel service peut-on utiliser pour récupérer les paramètres de route depuis un composant ? ActivatedRoute
+Quel module doit-on importer pour pouvoir utiliser [(ngModel)] ? FormsModule
+Quelle commande ne fait pas partie de la CLI Angular : ng exit
+Comment peut-on afficher une propriété définie dans un composant ? par interpolation
+quelle est celle qui désigne une extension Chrome pour débugguer les apps Angular ? angury
+ligne 7 manque of
+écouter les événements de l'élément hôte depuis une directive fille? @HostListener
