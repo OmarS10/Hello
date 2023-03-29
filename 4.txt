@@ -1,4 +1,5 @@
 StringBuilder
+B extend A
 Singleton
 GestionUtilisateurs : HashMap
 synchronized
@@ -6,6 +7,7 @@ ENUM : Planet.MERCURY.equals(Planet.MERCURY) est vraie , Planet.MERCURY == Plane
 ----Spring -----
 Validator
 @Lazy : Quand il est réferencier à un autre bean ,Quand il est explicitement récupéré de la bean factory
+findUserById
 Stomp : question web socket
 ContextLostEvent n'existe pas dans spring framework
 @Conditional(ModelExistsCondition.class) si la variable d'environnement existe
