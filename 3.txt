@@ -1,9 +1,16 @@
+-------Vehicule ----
 SELECT vehicle_part_id, arrived_timestamp
 FROM vehicle_part_location where location_id In (3,6,12)
 and left_timestamp IS NOT NULL;
 
 SELECT make , count(*) as vehicle_make_count 
 FROM vehicle group by make having count(*) >= 2
+
+select vehicle_id from vehicle v
+where NOT EXISTS 
+(select * from vehicle_part p where v.vehicle_id = p.vehicle_id);
+------Customer -------
+SELECT distinct city FROM customer order by city
 
 SELECT LASTNAME, FIRSTNAME FROM customer 
 WHERE ZIPCODE IN ('75000', '34000') AND BIRTH_DATE IS NOT NULL
@@ -12,13 +19,11 @@ Select distinct id, first_name , last_name
 from customers where id 
 not in (select distinct customer_id from orders where purchase = 'Cheeseburger') order by id ;
 
-select vehicle_id from vehicle v
-where NOT EXISTS 
-(select * from vehicle_part p where v.vehicle_id = p.vehicle_id);
+SELECT LASTNAME, FIRSTNAME FROM customer WHERE LASTNAME LIKE 'W%' ORDER BY LASTNAME, FIRSTNAME;
 
 select customer_id from customer
  where cuctomer_id not in (select distinct customer_id from purchase_order) ;
-
+---- Product ------
 obtenir les produit et cat
 SELECT p.name AS product_name, pc.name AS category_name FROM product AS p
 LEFT JOIN product_category AS pc ON p.product_id = pc.product_category_id;
@@ -27,24 +32,20 @@ select c.nom cat , count(*)
 from categrie c join produit p
  on (p.idcat = c.idcat) group by c.nomcat 
 
+Select c.name, count(product_id) as PRODUCT_COUNT FROM product_categorie c
+left join product p on c.product_category_id = p.product_category_id group by
+c.product_category_id
+
 sect distinct p.idclient from purchase 
 order po join order_product op ON op.orderid = po.orderid
 join product p on p.productid = op.productid join productcat pc ON p.prod = pc. 
 where pc.name = "Book" or pc.name = "Garden"
 
+------Student ---- 
+
 select FirstName, LastName , 
 ROUND(AVG(score),2) From Students 
 where Score>0.9 group by FirstName , LastName
 
----------------------------
-Vous réalisez une bibliothèque en Java. Parmi ces options, laquelle privilégiez-vous pour traiter un 
-comportement inattendu ? throw new ComportementInattenduException()
-Accèsd'une méthodesynchroniséepardeuxthreads :2 threads
-Annotation @FunctionalInterface// switch : 1et2
-shallowcopie
-String.isBlank()
-Predicate boolean
-Gestion Utilisateur HashMap
-Déclarer une classe sans niveau d'accès explicite est en général conseillé. faux
 
 

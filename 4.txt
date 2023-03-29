@@ -1,11 +1,50 @@
-laquelle n'est pas une méthode du cycle de vie Angular ? ngContentChange
-service HttpClient : HttpClientModule
-laquelle n'est pas un directive structurelle d'Angular : ngUnless
-propriété permet de définir des routes filles : children
-Qu'utiliseriez-vous pour ajouter le même entête HTTP à tous vos appels HTTP ? Un Interceptor
-Quel service peut-on utiliser pour récupérer les paramètres de route depuis un composant ? ActivatedRoute
-Quel module doit-on importer pour pouvoir utiliser [(ngModel)] ? FormsModule
-Quelle commande ne fait pas partie de la CLI Angular : ng exit
+StringBuilder
+Singleton
+GestionUtilisateurs : HashMap
+synchronized
+ENUM : Planet.MERCURY.equals(Planet.MERCURY) est vraie , Planet.MERCURY == Planet.MERCURY est vraie
+----Spring -----
+Validator
+@Lazy : Quand il est réferencier à un autre bean ,Quand il est explicitement récupéré de la bean factory
+Stomp : question web socket
+ContextLostEvent n'existe pas dans spring framework
+@Conditional(ModelExistsCondition.class) si la variable d'environnement existe
+@GetMapping("/cart/{cartId}")
+NOUniqueBeanDefinitionException est levé 
+---------JS----------
+z-index : Spécifier la position d’empilement d’un bloc par rapport à un autre
+Parmi les expressions suivantes, lesquelles seront évaluées à true ? "a"==='a', 4.0===4, "1"==1
+function average(table) {
+ if(table.length == 0){
+ return 0;
+ }else{
+ var somme = 0;
+ for(var i = 0 ; i < table.length ; i++){
+ somme+=table[i];
+ }
+ return somme/table.length;
+ }
+ }
+--range somme -- 
+ function calc(array, n1, n2) {
+ var somme = 0;
+ 
+ for(var i = n1 ; i <= n2 ; i++){
+ somme += array[i];
+ }
+ return somme;
+ }
+
+
+-------------ANGULAR----------
+- laquelle n'est pas une méthode du cycle de vie Angular ? ngContentChange
+- service HttpClient : HttpClientModule
+- laquelle n'est pas un directive structurelle d'Angular : ngUnless
+- propriété permet de définir des routes filles : children
+- Qu'utiliseriez-vous pour ajouter le même entête HTTP à tous vos appels HTTP ? Un Interceptor
+- Quel service peut-on utiliser pour récupérer les paramètres de route depuis un composant ? ActivatedRoute
+- Quel module doit-on importer pour pouvoir utiliser [(ngModel)] ? FormsModule
+- Quelle commande ne fait pas partie de la CLI Angular : ng exit
 Comment peut-on afficher une propriété définie dans un composant ? par interpolation
 quelle est celle qui désigne une extension Chrome pour débugguer les apps Angular ? angury
 ligne 7 manque of

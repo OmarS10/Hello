@@ -8,7 +8,9 @@ total1=total1+prices[i];}
 return (int)((total1+(float)((prices[len-1])-((prices[len-1])
 *discount/100f))));
 tendreverszero -------------
- if (ints.length != 0) {
+if (ints == null || ints.length == 0) {
+        return 0;
+    }
     int near = ints[0];
     for (int i = 0; i < ints.length; i++) {
         if (Math.abs(ints[i]) <= Math.abs(near)) {
@@ -21,9 +23,25 @@ tendreverszero -------------
         }
     }
     return near;
-} else {
-    return 0;
-}
+orrrrrrrrrrrrrrrr
+ if (ints == null || ints.length == 0) {
+        return 0;
+    }
+
+    int closest = ints[0];
+
+    for (int i = 1; i < ints.length; i++) {
+        int current = ints[i];
+
+        if (Math.abs(current) < Math.abs(closest) 
+|| (Math.abs(current) == Math.abs(closest) 
+&& current > closest)) {
+            closest = current;
+        }
+    }
+
+    return closest;
+
 findlargest -------------------
 int max = numbers[0];
          int i ; 
