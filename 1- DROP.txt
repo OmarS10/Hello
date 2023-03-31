@@ -1,0 +1,9 @@
+1- DROP 
+2- CLE PRIMAIRE 
+3- TABLE DE JOINTURE 
+4- DELETE FROM 
+5- SELECT distinct city FROM customer order by city
+6- jetni select where dra chno = 0 
+7- select customer_id from customer where cuctomer_id not in (select distinct customer_id from purchase_order) ;
+8- 
+9-

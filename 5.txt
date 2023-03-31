@@ -1,0 +1,75 @@
+---------average - -----------
+function average(table) {
+ if(table.length == 0){
+ return 0;
+ }else{
+ var somme = 0;
+ for(var i = 0 ; i < table.length ; i++){
+ somme+=table[i];
+ }
+ return somme/table.length;
+ }
+ }
+--range somme -- 
+ function calc(array, n1, n2) {
+ var somme = 0;
+ 
+ for(var i = n1 ; i <= n2 ; i++){
+ somme += array[i];
+ }
+ return somme;
+ }
+-------contains word -------- 
+function countWords(arr) {
+        const counts = [];
+        arr.forEach(word => {
+          if (!counts[word]) {
+            counts[word] = 1;
+          } else {
+            counts[word]++;
+          }
+        });
+        const result = [];
+        for (let word in counts) {
+          result.push(counts[word] );
+        }
+        return result;
+      }
+const myWords = ["the", "dog", "hello", "the", "world"];
+const counts = countWords(myWords);
+console.log(counts);
+----------FilterWords-------------
+function filterWordsByLetters(words, letters) {
+  const filteredWords = [];
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    for (let j = 0; j < word.length; j++) {
+      const letter = word.charAt(j);
+      if (letters.indexOf(letter) !== -1) {
+        filteredWords.push(word);
+        break;
+      }
+    }
+  }
+
+  return filteredWords;
+}
+-----resharp -----
+function reshape(n, str) {
+  str = str.replace(/\s/g, "");
+  let result = "";
+  let line = "";
+  for (let i = 0; i < str.length; i++) {
+    line += str[i];
+    if (line.length === n) {
+      result += line + "\n";
+      line = "";
+    }
+  }
+  if (line.length > 0) {
+    result += line;
+  }
+  
+  return result;
+}

@@ -132,18 +132,21 @@ if (n == 0) return "";
 return builder.toString();}
 ------- count frequency ----- 
 public static int[] countFrequencies(String[] words){
-	 Map<String, Integer> map = new HashMap<>();
-        for (int i = 0; i < words.length; i++)
-        {
-          int count = 0; 
-            if (map.containsKey(words[i])) {
-               count = map.get(words[i]);
-               map.put(words[i], count + 1);
-                } else {
-               map.put(words[i], 1);
-              }
-           }
-        return map;
+	Map<String, Integer> map = new HashMap<>();
+    for (int i = 0; i < words.length; i++) {
+        if (map.containsKey(words[i])) {
+            int count = map.get(words[i]);
+            map.put(words[i], count + 1);
+        } else {
+            map.put(words[i], 1);
+        }
+    }
+    int[] frequencies = new int[map.size()];
+    int index = 0;
+    for (int count : map.values()) {
+        frequencies[index++] = count;
+    }
+    return frequencies;
 	}
 ------- Fizzbuzz ---- 
  IntStream.rangeClosed(1, 100)
@@ -187,25 +190,16 @@ List<String> listWithDuplicates = new ArrayList<>(Arrays.asList("C++", "Java", "
         }
 ------- filtrage des mots ----- 
 public static String filter (String str, String[] tab) {
-        String res="";
- 
-        for (int i=0;i<str.length();i++){
-            String charTemp = stringCharAt(str, i);
-            if(!contains(tab, charTemp)){
-               res=res+charTemp;
-            }
-        } 
-        return res;
-    }
-public static boolean contains (String[] tab, String c) {
-        boolean res=false;
-       for (int i=0;i<tab.length;i++){
-           	if (areStringEqual(c,tab[i])){
-               	res=true;
-                break;
-            }
-       } 
-        return res;
+         List<String> filteredWords = new ArrayList<>();
+ for (String word : words) {
+for (int i = 0; i < word.length(); i++) {
+if (alphabets.contains(Character.toString(word.charAt(i)))) {
+filteredWords.add(word);
+break;
+}
+}
+}
+return filteredWords.toArray(new String[filteredWords.size()]);
     }
 -----------Exception ------- 
  try {
@@ -418,4 +412,23 @@ for(int i = 0; i < lines.size(); i++){
             }
         }
     }
+---------findSumCombination-------------
+public int[] findSumCombination(int[] arr, int k) {
+    int[] result = new int[2];
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+    for (int i = 0; i < arr.length; i++) {
+        int complement = k - arr[i];
+
+        if (map.containsKey(complement)) {
+            result[0] = complement;
+            result[1] = arr[i];
+            return result;
+        }
+
+        map.put(arr[i], i);
+    }
+
+    return null;
+}
  

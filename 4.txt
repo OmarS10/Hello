@@ -15,6 +15,7 @@ ContextLostEvent n'existe pas dans spring framework
 NOUniqueBeanDefinitionException est levé 
 ---------JS----------
 z-index : Spécifier la position d’empilement d’un bloc par rapport à un autre
+Quels mots-clés fournissent une portée de bloc (block scope) ? let , const
 Parmi les expressions suivantes, lesquelles seront évaluées à true ? "a"==='a', 4.0===4, "1"==1
 function average(table) {
  if(table.length == 0){
